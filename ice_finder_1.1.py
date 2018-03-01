@@ -1,7 +1,7 @@
 
 # coding: utf-8
 
-# In[ ]:
+
 
 
 import numpy as np
@@ -51,7 +51,7 @@ def find_ice(image,sobel_gradient_threshold,size_threshold):
         return image6
 
 
-# In[ ]:
+
 
 
 img=mrcfile.open('ice11.mrc').data

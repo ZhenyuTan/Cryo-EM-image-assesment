@@ -1,9 +1,6 @@
 
 # coding: utf-8
 
-# In[ ]:
-
-
 import numpy as np
 from scipy.ndimage.filters import gaussian_filter,median_filter
 from skimage.filters import sobel
@@ -14,10 +11,6 @@ import mahotas as mh
 from skimage.io import imread,imshow,show
 from scipy import optimize
 
-
-# In[ ]:
-
-
 def preprocessing(img_raw):
     #preprocessing the image
     img1=(img_raw-np.min(img_raw))/(np.max(img_raw)-np.min(img_raw))
@@ -27,10 +20,7 @@ def preprocessing(img_raw):
     img6=median_filter(img5, size=50, mode='reflect')
     return img6
 
-                         
-
-
-# In[ ]:
+                        
 
 
 def find_edge(img_processed):
@@ -43,7 +33,7 @@ def find_edge(img_processed):
         
 
 
-# In[ ]:
+
 
 
 def check_img_status(image_edge):
@@ -54,9 +44,6 @@ def check_img_status(image_edge):
     else:
         return 1 
     
-
-
-# In[ ]:
 
 
 def calc_R(x,y, xc, yc):
@@ -81,7 +68,7 @@ def leastsq_circle(x,y):
     return xc, yc, R, residu
 
 
-# In[ ]:
+
 
 
 def fit_edge(image_aftercheck):
@@ -91,7 +78,7 @@ def fit_edge(image_aftercheck):
     return xc_fit,yc_fit,R_fit,error
 
 
-# In[ ]:
+
 
 
 def check_circle_fit(radius_fit,fit_error):
@@ -103,7 +90,7 @@ def check_circle_fit(radius_fit,fit_error):
         return 0 
 
 
-# In[ ]:
+
 
 
 def draw_circle(a,b,c):
@@ -118,7 +105,7 @@ def draw_circle(a,b,c):
     
 
 
-# In[ ]:
+
 
 
 
@@ -150,23 +137,11 @@ def edge_find_and_fit(img):
 
 
 
-# In[ ]:
 
 
 img=mrcfile.open('holes9.mrc').data
 edge_find_and_fit(img)
+                            
 
 
-# In[ ]:
-
-
-
-                                
-
-
-# In[ ]:
-
-
-
-        
-
+  
